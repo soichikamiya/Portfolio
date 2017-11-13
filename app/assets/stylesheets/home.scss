@@ -6,19 +6,112 @@ html {
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
   line-height: 1.7;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 body {
-  color: black;
-  background-color: #3ecdc6;
-  margin: 0;
-  min-height: 1vh;
+  color: #2d3133;
+  background-color: skyblue;
+  background-repeat: no-repeat;
+  background-position: center 40%;
   background-size: cover;
   background-image: url("/pic.jpg");
-  text-align:center;
 }
 
-.about-img {
-  height: 500px;
-  width: 60%;
+header {
+  height: 100px;
+  width: 100%;
+  background-color: grey;
+  opacity: 0.5;
+  margin: 0;
+  border-bottom: 1px solid grey;
+  
+  .header-logo {
+  float: left;
+  padding-top: 5px;
+  padding-left: 30px;
+  color: black;
+  font-size: 40px;
+  }
+  
+  .header-menus {
+  float: right;
+  list-style: none;
+  }
+
+  .header-menus a {
+  font-size: 25px;
+  color: black;
+  padding-right: 30px;
+  }
+}
+
+.main {
+  width: 100%;
+  height: 650px;
+  min-height: 100%;
+  margin-top: 80px;
+  
+  h1 {
+    letter-spacing: 20px;
+    margin-bottom: 60px;
+  }
+  
+  p {
+    letter-spacing: 5px;
+  }
+  
+  .signup-btn {
+    font-size: 32px;
+    padding: 20px 30px;
+    background-color: skyblue;
+    opacity: 0.8;
+    border-radius: 25px;
+    color: #2d3133;
+    box-shadow: 0 7px darkblue;
+  }
+  
+  .signup-btn:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+  }
+  
+  .signup-btn:hover {
+    opacity: 1;
+  }
+  
+  .for-login {
+    margin-top: 40px;
+    font-size: 18px;
+    color: white;
+    a {
+      color:white;
+    }
+  }
+}
+
+.about-main {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin-top: 80px;
+
+  h1 {
+    letter-spacing: 15px;
+    font-size: 50px;
+  }
+  
+  p {
+    letter-spacing: 5px;
+  }
+  
+  h2 {
+    letter-spacing: 10px;
+  }
+
+  .about-img {
+    height: 500px;
+    width: 60%;
+  }
 }
