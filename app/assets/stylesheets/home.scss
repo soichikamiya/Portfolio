@@ -22,6 +22,7 @@ header {
   height: 100px;
   width: 100%;
   background-color: grey;
+  font-weight: 600;
   opacity: 0.5;
   margin: 0;
   border-bottom: 1px solid grey;
@@ -63,6 +64,7 @@ header {
   
   .signup-btn {
     font-size: 32px;
+    font-weight: 700;
     padding: 20px 30px;
     background-color: skyblue;
     opacity: 0.8;
@@ -84,6 +86,7 @@ header {
   .for-login {
     margin-top: 40px;
     font-size: 18px;
+    font-weight: 700;
     color: white;
     a {
       color:white;

@@ -6,7 +6,27 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+ <header>
+  <div class="header-logo">
+    <%= link_to("My Self", "/") %>
+  </div>
+  <ul class="header-menus">
+    <li>
+      <%= link_to("My Selfとは", "/about") %>
+    </li>
+    <li>
+      <%= link_to("User一覧", "/users/index") %>
+    </li>
+    <li>
+      <%= link_to("Login", "#") %>
+    </li>
+    <li>
+      <%= link_to("Signup", "/signup") %>
+    </li>
+  </ul>
+ </header>
 
 <%= yield %>
 
