@@ -16,6 +16,9 @@
           <p>メールアドレス</p>
           <!-- name属性を設定してください -->
           <input name="email">
+          <p>パスワード</p>
+          <!-- パスワード用のフォームを追加してください -->
+          <input type="password" name="password" value="<%= @user.password %>">
           <input type="submit" value="Sign Up">
         <!-- end を追加してください -->
         <% end %>

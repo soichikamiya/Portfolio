@@ -11,10 +11,13 @@
         <% end %>
         
         <!-- フォームの送信先を指定してください -->
-        <%= form_tag("/users/#{@user.id}/update") do %>
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
           <p>ユーザー名</p>
           <!-- name属性を設定してください -->
           <input name="name" value="<%= @user.name %>">
+           <p>画像</p>
+          <!-- 画像用のフォームを追加してください -->
+          <input name="image" type="file">
           <p>メールアドレス</p>
           <!-- name属性を設定してください -->
           <input name="email" value="<%= @user.email %>">
