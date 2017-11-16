@@ -16,6 +16,7 @@ body {
   background-position: center 40%;
   background-size: cover;
   background-image: url("/pic.jpg");
+  a { text-decoration: none; } 
 }
 
 header {
@@ -23,27 +24,36 @@ header {
   width: 100%;
   background-color: grey;
   font-weight: 600;
-  opacity: 0.5;
-  margin: 0;
+  opacity: 0.6;
   border-bottom: 1px solid grey;
   
   .header-logo {
-  float: left;
-  padding-top: 5px;
-  padding-left: 30px;
-  color: black;
-  font-size: 40px;
+    height: 100px;
+    float: left;
+    margin-top: 15.5px;
+    margin-left: 30px;
+    a:visited { color: black; }
+    a:hover { background-color: #696969;}
+    
+    a {
+    font-size: 40px;
+    color: black;
+    padding: 21px;
+    }
   }
   
   .header-menus {
-  float: right;
-  list-style: none;
-  }
+    padding-top: 10px;
+    float: right;
+    list-style: none;
+    a:hover { background-color: #696969;}
+    li {float: left; }
 
-  .header-menus a {
-  font-size: 25px;
-  color: black;
-  padding-right: 30px;
+    a {
+     font-size: 25px;
+     color: black;
+     padding: 20px;
+     }
   }
 }
 
@@ -70,7 +80,7 @@ header {
     opacity: 0.8;
     border-radius: 25px;
     color: #2d3133;
-    box-shadow: 0 7px darkblue;
+    box-shadow: 0 7px #161666;
   }
   
   .signup-btn:active {
@@ -84,12 +94,14 @@ header {
   }
   
   .for-login {
-    margin-top: 40px;
+    margin-top: 45px;
     font-size: 18px;
     font-weight: 700;
     color: white;
+    a:hover {color:#00bfff;}
     a {
       color:white;
+      text-decoration: underline;
     }
   }
 }
