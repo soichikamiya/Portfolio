@@ -111,6 +111,43 @@
 }
 
 /* users/new, users/edit ================================ */
+.form-heading {
+  font-family: 'HanziPen TC',sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.form-body p{
+  font-size: 24px;
+}
+
 .users-form input {
+  width: 350px;
+  height: 50px;
+  font-size: 25px;
   margin-bottom: 15px;
 }
+.email input {
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+button.submit {
+  font-weight: bold;
+  margin-top: 60px;
+  width: 180px;
+  height: 80px;
+  font-size: 30px;
+  opacity: 0.75;
+  border-radius: 25px;
+  background-color: skyblue;
+}
+  button.submit:hover {
+    opacity: 1;
+  }
+  button.submit:active {
+  background-color: #4191e0;
+  }

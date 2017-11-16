@@ -1,4 +1,5 @@
-<div class="main users-new">
+<body background="sky.jpg">
+<div class="users-new">
   <div class="container">
     <div class="form-heading">新規ユーザー登録</div>
     <div class="form users-form">
@@ -13,13 +14,17 @@
           <p>ユーザー名</p>
           <!-- name属性を設定してください -->
           <input name="name">
+        <div class="email">
           <p>メールアドレス</p>
           <!-- name属性を設定してください -->
           <input name="email">
+        </div>
           <p>パスワード</p>
           <!-- パスワード用のフォームを追加してください -->
           <input type="password" name="password" value="<%= @user.password %>">
-          <input type="submit" value="Sign Up">
+          <br>
+          <button class="submit" type="submit">Sign Up</button>
+        
         <!-- end を追加してください -->
         <% end %>
       </div>
