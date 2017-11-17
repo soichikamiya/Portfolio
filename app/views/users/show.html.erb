@@ -6,6 +6,7 @@
       <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h1><%= @user.name %></h1>
       <p><%= @user.email %></p>
+      
       <p class="info">
         生年月日 ：1989年9月12日<br>
         出身地　 ：大阪府和泉市<br>
@@ -15,6 +16,11 @@
       </p>
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <%= link_to("削除", "/users/#{@user.id}/destroy", {method: "post"}) %>
+    </div>
+    
+    <div class="chara">
+      <h1>趣味</h1>
+      <p>スノボー</p>
     </div>
   </div>
 </div>

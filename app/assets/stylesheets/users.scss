@@ -35,15 +35,18 @@
 
 .user-right {
   width: 90%;
-  
   text-align: left;
   display: table-cell;
   vertical-align: middle;
   font-size: 30px;
   font-weight: 530;
-  a { padding: 20px 100px 20px 60px;
+  a { padding: 15px 50px 15px 60px;
     color: #1e90ff;}
-  a:hover { color: #0000ff;}
+  a:hover { color: #0000cd;
+    font-family: 'HanziPen TC',sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+  }
   a:active { color: #ff4500;
   }
   
@@ -58,6 +61,7 @@
 .user {
   margin: 70px 0px 10px 350px;
   text-align: center;
+
   
   img {
   height: 400px;
@@ -87,19 +91,24 @@
     margin: 30px 0 25px 380px;
   }
   
+  a:hover { color: red;
+    text-decoration: underline;
+  }
+  
   a {
   color: #808080;
   font-size: 23px;
   font-weight: 300;
   margin: 0 120px 0 120px;
   }
-    
-
 }
-　 .user a:hover { 
-    color: #ff0000; 
-    text-decoration: underline;
-  }　
+
+.chara {
+  text-align: center;
+  margin-top: 80px;
+}
+
+
 
 
 
@@ -138,6 +147,7 @@ button.submit {
   opacity: 0.75;
   border-radius: 25px;
   background-color: skyblue;
+  cursor: pointer;
 }
   button.submit:hover {
     opacity: 1;
