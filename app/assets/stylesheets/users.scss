@@ -52,69 +52,57 @@
 
 /* users/show ================================ */
 .user-show {
-  text-align: center;
+  position: relative;
 }
 
 .user {
-  margin-bottom: 20px;
-}
-
-.user img {
-  width: 80px;
-  height: 80px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
+  margin: 70px 0px 10px 350px;
+  text-align: center;
+  
+  img {
+  height: 400px;
+  width: 400px;
+  border-radius: 20%;
+  box-shadow: 5px 5px 3px #666666;
   object-fit: cover;
-}
+  position: absolute;
+  left: 200px;
+  }
+  
+  h1 {
+  font-family: 'HanziPen TC',sans-serif;
+  letter-spacing: 6px;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 0.8;
+  }
+  
+  p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  }
+  
+  .info {
+    text-align: left;
+    margin: 30px 0 25px 380px;
+  }
+  
+  a {
+  color: #808080;
+  font-size: 23px;
+  font-weight: 300;
+  margin: 0 120px 0 120px;
+  }
+    
 
-.user h2 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
 }
+　 .user a:hover { 
+    color: #ff0000; 
+    text-decoration: underline;
+  }　
 
-.user p {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
 
-.user a {
-  color: #8899a6;
-  text-decoration: underline;
-  font-weight: 200;
-}
 
-.user span {
-  color: #afb6bf;
-  font-weight: 200;
-  padding: 0 6px 0 8px;
-}
-
-.user-tabs {
-  margin-top: 40px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-}
-
-.user-tabs li {
-  float: left;
-}
-
-.user-tabs li.active {
-  border-bottom: 2px solid #3ecdc6;
-}
-
-.user-tabs li.active a {
-  color: #57575f;
-}
-
-.user-tabs a {
-  display: inline-block;
-  padding: 16px 30px;
-  color: #afb6bf;
-}
 
 /* users/new, users/edit ================================ */
 .form-heading {

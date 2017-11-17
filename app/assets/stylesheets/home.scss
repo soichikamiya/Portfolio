@@ -87,11 +87,10 @@ header {
     font-size: 40px;
     font-weight: 700;
     padding: 20px 30px;
-    background-color: skyblue;
-    opacity: 0.8;
+    background-color: rgba(135, 206, 235, 0.8);
     border-radius: 25px;
     color: #2d3133;
-    box-shadow: 0 7px #161666;
+    box-shadow: 0 7px 3px #161666;
   }
   
   .signup-btn:active {
@@ -101,7 +100,7 @@ header {
   }
   
   .signup-btn:hover {
-    opacity: 1;
+    background-color: rgba(135, 206, 235, 1);
   }
   
   .for-login {
