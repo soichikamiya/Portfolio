@@ -5,7 +5,7 @@
       <!-- <img>タグを用いて、プロフィール画像を表示してください -->
       <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h1><%= @user.name %></h1>
-      <p><%= @user.email %></p>
+      <p>【 <%= @user.email %> 】</p>
       
       <p class="info">
         生年月日 ：1989年9月12日<br>
@@ -19,7 +19,7 @@
     </div>
     
     <div class="chara">
-      <span>経歴</span>
+      <span>〜 経歴 〜</span>
        <table border="1px" cellpadding="15px" align="center">
         <tr bgcolor="#5cc3e6">
           <th>西暦</th>
@@ -27,21 +27,43 @@
         </tr>
         <tr>
           <td>　　2012年3月　　</td>
-          <td>桃山学院大学卒業</td>
+          <td><a href="http://www.andrew.ac.jp/" target="_blank">
+            桃山学院大学</a> 卒業</td>
         </tr>
         <tr>
           <td>2012年4月</td>
-          <td>　　ＨＭＩ(ホテル業界) 入社　　</td>
+          <td>　　<a href="http://www.hmi-hotel.co.jp/" target="_blank">
+            ＨＭＩ</a>(ホテル業界) 入社　　</td>
         </tr>
         <tr>
           <td>2014年4月</td>
-          <td>丸福珈琲店入社</td>
+          <td><a href="http://marufukucoffeeten.com/kinen80/" target="_blank">
+            丸福珈琲店</a> 入社</td>
         </tr>
         <tr>
           <td>2015年4月</td>
-          <td>今野製作所入社</td>
+          <td><a href="http://konno-s.co.jp/" target="_blank">
+            今野製作所</a> 入社</td>
         </tr>
       </table>
+      
+      <h1>〜 趣味 〜</h1>
+      <h2>・バイクに乗ること</h2>
+      <p>１年かけて日本縦断に成功</p>
+      <img src="/bike1.jpg">
+      <img src="/bike2.jpg">
+      <span class="map"><img src="/map.jpg"></span>
+      <h2>・海外旅行</h2>
+      <p>東南アジアやカリフォルニアにバックパックを経験</p>
+      <img src="/trip1.jpg">
+      <img src="/trip2.jpg">
+      <h2>・喫茶店巡り、珈琲を飲むこと</h2>
+      <p>趣味でコーヒーインストラクターの資格を取得</p>
+      <div class="coffee">
+      <img src="/coffee.jpg">
+      </div>
+      <br>
+      <a href=""　color="blue">＜ページのTOPに戻る＞</a>
     </div>
   </div>
 </div>

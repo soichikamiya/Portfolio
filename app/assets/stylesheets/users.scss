@@ -83,7 +83,7 @@
   
   p {
   font-size: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
   }
   
   .info {
@@ -104,11 +104,38 @@
 }
 
 .chara {
-  margin: 80px 0 50px;
+  margin: 40px 0 30px;
+  
  span {
    display: inline-block;
    font-size: 40px;
-   margin-bottom: 15px;
+   margin: 40px 0 15px;
+ }
+ 
+ h1 {
+   margin: 70px 0 50px 0;
+   font-size: 45px;
+   font-weight: 400;
+ }
+ 
+ p {
+   font-size: 24px;
+ }
+ 
+ img {
+   height: 250px;
+   width: 300px;
+   margin: 0 30px 30px 30px; 
+ }
+ 
+ .map img{
+      height: 250px;
+   width: 170px;
+ }
+ 
+ .coffee img{
+   height: 250px;
+   width: 280px;
  }
 }
 
