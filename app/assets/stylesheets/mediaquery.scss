@@ -1,0 +1,150 @@
+/* タブレット向けレイアウト */
+@media all and (max-width: 1000px) {
+  header {
+   height: 100px;
+   
+    .header-logo a {
+     margin-left: 0px;
+     padding: 32px 10px 22px 10px;
+     font-size: 28px;
+     }
+  
+    .header-menus a {
+      padding: 500px 8px 40px 8px;
+      font-size: 20px;
+     }
+  }
+  
+/* top page ================================ */
+  .top-main {
+    height: 685px;
+    h1 {
+    letter-spacing: 8px;
+    font-size: 55px;
+   }
+  }
+
+  .foot {
+　　position: absolute;
+    bottom: 0;
+
+  .fo-main {
+    font-size: 16px;
+  }
+  .fo-menus {
+  li {
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  }
+}
+
+/* about page ================================ */
+.about-main {
+  h1 {
+    letter-spacing: 12px;
+    font-size: 55px;
+  }
+  
+  p {
+    letter-spacing: 3px;
+    font-size: 23px;
+  }
+  
+  h2 {
+    letter-spacing: 10px;
+    font-size: 33px;
+    padding: 35px 0 20px;
+  }
+
+  .about-img {
+    height: 500px;
+    width: 500px;
+  }
+}
+/* 終わり================================ */
+}
+
+
+/* スマホ向けレイアウト */
+@media all and (max-width: 670px) {
+  header {
+   height: 100px;
+   
+    .header-logo a {
+     margin-left: 0px;
+     padding: 35px 5px 33px 5px;
+     font-size: 20px;
+     }
+  
+    .header-menus a {
+      padding: 45px 10px 42px 10px;
+      font-size: 12px;
+     }
+  }
+/* top page ================================ */
+  .top-main {
+    h1 {
+     letter-spacing: 5px;
+     margin-bottom: 30px;
+     font-size: 40px;
+     }
+     
+    p {
+     letter-spacing: 1px;
+     font-size: 25px;
+     } 
+     
+    .signup-btn {
+     font-size: 35px;
+    }
+    
+    .for-login {
+    margin: 50px 0 55px 0;
+    font-size: 18px;
+    p {font-size: 22px;}
+    }
+  }
+
+  .foot {
+    position: absolute;
+    bottom: 0;
+
+  .fo-main {
+      display: none;
+  }
+  .fo-menus {
+  li {
+    font-size: 15px;
+    margin: 0px 0px 0px 12px;
+  }
+  }
+  }
+  
+  
+/* about page ================================ */
+ .about-main {
+  h1 {
+    letter-spacing: 5px;
+    font-size: 50px;
+  }
+  
+  p {
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+  
+  h2 {
+    letter-spacing: 10px;
+    font-size: 27px;
+    padding: 35px 0 10px;
+  }
+
+  .about-img {
+    height: 380px;
+    width: 380px;
+    margin-bottom: 70px;
+  }
+ }
+}
+
