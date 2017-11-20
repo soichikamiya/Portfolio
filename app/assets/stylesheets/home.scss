@@ -34,6 +34,7 @@ header {
     a:visited { color: black; }
     a:hover { background-color: #696969;}
     a {
+    transition: all 0.5s;
     display: inline-block;
     margin-left: 30px;
     padding: 16px;
@@ -50,6 +51,7 @@ header {
     a:hover { background-color: #696969;}
     li {float: left; }
     a {
+     transition: all 0.5s;
      padding: 35px 25px 32px 25px;
      font-size: 25px;
      color: black;
@@ -105,7 +107,7 @@ header {
   }
   
   .for-login {
-    margin-top: 45px;
+    margin: 30px 0 55px 0;
     font-size: 18px;
     font-weight: 700;
     color: white;
@@ -122,13 +124,13 @@ header {
     height: 45px;
     width: 45px;
     border-radius: 11px;
-    opacity: 0.75;
+    opacity: 0.7;
   }
   .facebook { margin-right: 20px;}
   .twitter { margin-right: 20px; }
 
   .foot {
-    margin-top: 21px;
+    margin-top: 5px;
     height: 40px;
     width: 100%;
     color: #333333;
