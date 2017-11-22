@@ -1,5 +1,4 @@
-$(function() {
-
+document.addEventListener("turbolinks:load", function() {
   //TOPモーダル
 
   $('#push').click(function() {
