@@ -108,16 +108,12 @@
 }
 
 .chara {
-  margin: 40px 0 30px;
+
+  width: 970px;
+  margin: auto;
   
- span {
-   display: inline-block;
-   font-size: 40px;
-   margin: 40px 0 15px;
- }
- 
  h1 {
-   margin: 70px 0 50px 0;
+   margin: 70px 0 30px 0;
    font-size: 45px;
    font-weight: 400;
  }
@@ -129,22 +125,44 @@
  img {
    height: 250px;
    width: 300px;
-   margin: 0 30px 30px 30px; 
+   margin: 0 30px 0 30px; 
  }
- 
- .map img{
-      height: 250px;
+
+ .map {
+   display: inline;
+  img{
+   height: 250px;
    width: 170px;
- }
+   }
+  }
  
  .coffee img{
    height: 250px;
    width: 280px;
  }
+
+
+/*アコーディオン追加 */
+  
+ .faq-list-item {
+  border-bottom: 3px solid #a9a9a9;
+  position: relative;
+  cursor: pointer;
+ }
+ 
+ span {
+  position: absolute;
+  top: 1px;
+  right: 50px;
+  color: #4d4d4d;
+  font-size: 30px;
+ }
+ 
+ .answer {
+  display: none;
+  margin-bottom: 20px;
+ }
 }
-
-
-
 
 
 /* users/new, users/edit ================================ */
