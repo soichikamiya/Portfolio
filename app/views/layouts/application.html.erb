@@ -4,6 +4,7 @@
   <title>Homepage</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 
@@ -15,11 +16,11 @@
   
   <ul class="header-menus">
     
-        <% if @current_user %>
-          <li>
+     <% if @current_user %>
+      <li>
             <!-- @current_userに書き換えてください -->
-            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-          </li>
+      <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+      </li>
     <li>
       <%= link_to("My Selfとは", "/about") %>
     </li>
@@ -37,13 +38,13 @@
     <li>
       <%= link_to("Log in", "/login") %>
     </li>
-    <li>
+    <li class="signup-show">
       <%= link_to("Sign up", "/signup") %>
     </li>
     <% end %>
   </ul>
  </header>
- 
+
   <% if flash[:notice] %>
    <div class="flash">
    <%= flash[:notice] %>
@@ -51,6 +52,6 @@
   <% end %>
 
 <%= yield %>
-
+<script src="script.js"></script>
 </body>
 </html>
