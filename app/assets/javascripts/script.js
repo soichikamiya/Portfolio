@@ -1,13 +1,13 @@
 $(function() {
 
-  // 新規登録モーダル
+  //TOPモーダル
 
-  $('.signup-show').click(function() {
-    $('#signup-modal').fadeIn();
+  $('#push').click(function() {
+    $('.secret').fadeIn(2500);
   });
 
-  $('#close-modal').click(function() {
-    $('#signup-modal').fadeOut();
+  $('#back').click(function() {
+    $('.secret').fadeOut(2500);
   });
   
   
