@@ -5,6 +5,9 @@
       <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h1><%= @user.name %></h1>
       <p>【 <%= @user.email %> 】</p>
+      
+      <% if %>
+      
       <p class="info">
         生年月日 ：1989年9月12日<br>
         出身地　 ：大阪府和泉市<br>
@@ -87,7 +90,13 @@
       </div>
       <br>
       <a href=""　color="blue">＜ページのTOPに戻る＞</a>
+    　<br><br>
     </div>
+    
+    <% else %>
+    aaaa
+    <% end %>
+    
   </div>
 </div>
 

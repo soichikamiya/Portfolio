@@ -85,8 +85,9 @@
 /* top page ================================ */
   .top-main {
     h1 {
+     margin-top: 50px;
      letter-spacing: 5px;
-     margin-bottom: 30px;
+     margin-bottom: 50px;
      font-size: 40px;
      }
      
@@ -146,5 +147,42 @@
     margin-bottom: 70px;
   }
  }
+}
+
+/* スマホ向けレイアウト */
+@media all and (max-width: 480px) {
+  header {
+   height: 100px;
+   
+    .header-logo a {
+     margin-left: 0px;
+     padding: 35px 5px 33px 5px;
+     font-size: 20px;
+     }
+  
+    .header-menus a {
+      padding: 45px 10px 42px 10px;
+      font-size: 14px;}
+      
+      .user-name{
+        display: none;
+      }
+     
+  }
+  
+    .top-main {
+    h1 {
+      margin-top: 50px;
+     letter-spacing: 2px;
+     margin-bottom: 50px;
+     font-size: 35px;
+     }
+     
+    p {
+     letter-spacing: 1px;
+     font-size: 20px;
+     } 
+    }
+
 }
 
