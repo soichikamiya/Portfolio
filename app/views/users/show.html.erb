@@ -1,13 +1,12 @@
 <div class="user-show">
   <div class="container">
     <div class="user">
-      <!-- <img>タグを用いて、プロフィール画像を表示してください -->
       <img src="<%= "/user_images/#{@user.image_name}" %>">
       <h1><%= @user.name %></h1>
       <p>【 <%= @user.email %> 】</p>
       
-      <% if %>
-      
+      <% if @user.id == 1 %>
+
       <p class="info">
         生年月日 ：1989年9月12日<br>
         出身地　 ：大阪府和泉市<br>
@@ -16,7 +15,7 @@
 　　<br>特技　　 ：好き嫌いなく何でも食べれる
       </p>
       <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <%= link_to("削除", "/users/#{@user.id}/destroy", {method: "post"}) %>
+      <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
     </div>
     
     <div class="chara">
@@ -94,9 +93,11 @@
     </div>
     
     <% else %>
-    aaaa
+      <div class="outers">
+      <%= link_to("編集", "/users/#{@user.id}/edit") %>
+      <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+      </div>
     <% end %>
-    
   </div>
 </div>
 

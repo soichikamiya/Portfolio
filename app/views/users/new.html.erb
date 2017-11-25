@@ -1,31 +1,27 @@
-
 <div class="users-new">
   <div class="container">
     <div class="form-heading">新規ユーザー登録</div>
     <div class="form users-form">
       <div class="form-body">
+        
         <% @user.errors.full_messages.each do |message| %>
           <div class="form-error">
             <%= message %>
           </div>
         <% end %>
-        <!-- form_tagメソッドを用いて、データの送信先を指定してください -->
+        
         <%= form_tag("/users/create") do %>
           <p>ユーザー名</p>
-          <!-- name属性を設定してください -->
           <input name="name" placeholder="User name">
-        <div class="email">
-          <p>メールアドレス</p>
-          <!-- name属性を設定してください -->
-          <input name="email" placeholder="Email address">
-        </div>
+        　<div class="email">
+          　<p>メールアドレス</p>
+          　<input name="email" placeholder="Email address">
+        　</div>
           <p>パスワード</p>
-          <!-- パスワード用のフォームを追加してください -->
           <input type="password" name="password" placeholder="Password" value="<%= @user.password %>">
           <br>
           <button class="submit" type="submit">Sign Up</button>
-        
-        <!-- end を追加してください -->
+  
         <% end %>
       </div>
     </div>
