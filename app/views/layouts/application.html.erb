@@ -4,18 +4,17 @@
   <title>Homepage</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
- <header>
+<header>
   <div class="header-logo">
     <%= link_to("My Self", "/") %>
   </div>
   
   <ul class="header-menus">
-    
      <% if @current_user %>
       <li class="user-name">
       <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
