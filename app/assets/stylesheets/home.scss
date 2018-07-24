@@ -274,6 +274,66 @@ header {
  }
 }
 
+/* フォーム================================ */
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.form-heading {
+  font-weight: 300;
+  margin: 60px 0 20px;
+  font-size: 48px;
+  color: #bcc8d4;
+}
+
+.form-body {
+  padding: 30px;
+}
+
+.form-error {
+  color: #ff4d75;
+}
+
+.pos-form input {
+  font-size: 20px;
+  font-weight: 200;
+  padding: 10px 25px;
+  background-color: rgba(135, 206, 235, 0.6);
+  border-radius: 25px;
+  color: #2d3133;
+  box-shadow: 0 7px 3px #161666;
+  letter-spacing: 5px;
+}
+
+.pos-form input:hover {
+  background-color: rgba(135, 206, 235, 1);
+}
+
+.pos-form input:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 0 3px 3px #161666;
+}
+
+.form textarea {
+  width: 100%;
+  min-height: 110px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+
+
+.form-body:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
 /* フラッシュ ================================ */
 .flash {
   padding: 8px 0;

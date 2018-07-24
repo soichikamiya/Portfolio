@@ -5,3 +5,6 @@ ja:
         name: ユーザー名
         password: パスワード
         email: メールアドレス
+        
+      post:
+        content: 投稿内容
