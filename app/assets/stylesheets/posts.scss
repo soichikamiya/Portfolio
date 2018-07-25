@@ -6,8 +6,13 @@
   font-family: 'HanziPen TC','Segoe Print','MS UI Gothic','Papyrus',sans-serif;
   font-weight: bold;
   font-size: 40px;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 50px;
+}
+
+.posts-h2 {
+  margin-top: 70px;
+  margin-bottom: 30px;
 }
 
 .posts-index-item {
@@ -108,4 +113,22 @@
 .posts-new textarea::-webkit-input-placeholder {
   font-size: 24px;
   opacity: 0.5;
+}
+
+.posts-form {
+  color: black;
+  font-size: 25px;
+  padding: 20px 30px;
+  border-radius: 25px;
+  background-color: rgba(135, 206, 235, 0.6);
+  cursor: pointer;
+  box-shadow: 0 7px 3px #161666;
+}
+.posts-form:hover {
+  background-color: rgba(135, 206, 235, 1);
+}
+.posts-form:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 0 2px 2px #161666;
 }

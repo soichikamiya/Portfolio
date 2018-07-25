@@ -51,21 +51,23 @@ body {
     background: linear-gradient(transparent 60%, #ffff66 60%);
     background: -webkit-linear-gradient(left, #DE487A, #FFDB4B, #2BD02B, #0095F9, #8E55FF);
     }
-      
     }
 }
-
   
 }
 #push, #back {
   cursor: pointer;
-  
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
   background: linear-gradient(transparent 60%, #ffff66 60%);
   background: -webkit-linear-gradient(left, #DE487A, #FFDB4B, #2BD02B, #0095F9, #8E55FF);
 }
-
+#push:hover {
+  border-bottom: double 6px #c71585;
+}
+#back:hover {
+  border-bottom: double 6px #c71585;
+}
 
 /* header================================ */
 
@@ -145,9 +147,9 @@ header {
   }
   
   .signup-btn:active {
-  position: relative;
-  top: 7px;
-  box-shadow: none;
+    position: relative;
+    top: 7px;
+    box-shadow: 0 2px 3px #161666;
   }
   
   .signup-btn:hover {
@@ -323,8 +325,6 @@ header {
   font-size: 16px;
   letter-spacing: 2px;
 }
-
-
 
 .form-body:after {
   content: '';
