@@ -14,8 +14,10 @@
 　　<br>血液型　 ：Ｏ型 
 　　<br>特技　　 ：好き嫌いなく何でも食べれる
       </p>
-      <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+      <% end %>
     </div>
     
     <div class="chara">
@@ -93,8 +95,10 @@
     
     <% else %>
       <div class="outers">
-      <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+        <% if @user.id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
+          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+          <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+        <% end %>
       </div>
     <% end %>
   </div>

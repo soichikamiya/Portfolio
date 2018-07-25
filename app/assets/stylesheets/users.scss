@@ -177,6 +177,10 @@
   margin-bottom: 50px;
 }
 
+.form-body{
+  margin-bottom: 50px;
+}
+
 .form-body p{
   font-size: 24px;
 }
@@ -185,34 +189,58 @@
   width: 350px;
   height: 50px;
   font-size: 25px;
-  margin-bottom: 10px;
 }
+
 .email input {
   width: 500px;
   height: 50px;
   font-size: 25px;
-  margin-bottom: 10px;
 }
+
 button.submit {
+  font-size: 30px;
   font-weight: bold;
   margin-top: 30px;
   width: 180px;
   height: 80px;
-  font-size: 30px;
-  opacity: 0.75;
   border-radius: 25px;
-  background-color: skyblue;
+  background-color: rgba(135, 206, 235, 0.6);
   cursor: pointer;
+  box-shadow: 0 7px 3px #161666;
 }
-  button.submit:hover {
-    opacity: 1;
-  }
-  button.submit:active {
-  background-color: #4191e0;
-  }
+button.submit:hover {
+  background-color: rgba(135, 206, 235, 1);
+}
+button.submit:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 0 2px 2px #161666;
+}
+  
 .file input {
   padding-left: 40px;
   font-size: 18px;
   margin-bottom: 0px;
   text-align: center;
+}
+
+.pos-form input {
+  font-size: 20px;
+  font-weight: 200;
+  padding: 10px 25px;
+  background-color: rgba(135, 206, 235, 0.6);
+  border-radius: 25px;
+  color: #2d3133;
+  box-shadow: 0 7px 3px #161666;
+  letter-spacing: 5px;
+}
+
+.pos-form input:hover {
+  
+}
+
+.pos-form input:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 0 3px 3px #161666;
 }
