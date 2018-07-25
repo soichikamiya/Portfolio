@@ -1,17 +1,29 @@
 <div class="main posts-index">
   <div class="container">
     <h1 class="posts-heading">投稿一覧</h1>
+    <%= link_to("コメントの新規投稿", "/posts/new", class: "posts-form") %><br><br><br>
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <%= post.content %>
         <div class="post-time">
           <%= simple_time(post.updated_at) %>
         </div>
+        <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
         <div class="post-menus">
           <%= link_to("編集", "/posts/#{post.id}/edit") %><span>　 </span>  
           <%= link_to("削除", "/posts/#{post.id}/destroy", method: :post, data: {confirm: "本当に削除しますか？"}) %>
         </div>
+        <% end %>
+        <div class="post-right">
+          <div class="post-user-name">
+            <span class="post-left">
+              <img src="<%= "/user_images/#{post.user.image_name}" %>">
+            </span>
+            <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+          </div>
+        </div>
       </div>
     <% end %>
+    <br><a href="" color="blue">＜ページのTOPに戻る＞</a><br><br>
   </div>
 </div>
