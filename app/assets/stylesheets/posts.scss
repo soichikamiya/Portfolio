@@ -145,3 +145,23 @@
   top: 5px;
   box-shadow: 0 2px 2px #161666;
 }
+
+/* likes/ ================================ */
+
+.like-btn-unlike {
+  margin-right: -18px;
+  margin-left: 5px;
+  color: #ff4500;
+}
+
+.like-btn {
+  margin-right: -18px;
+  margin-left: 5px;
+  color: #a9a9a9;
+}
+.like-btn:hover {
+  color: #ffa07a;
+} 
+.like-btn:active {
+  color: #ff4500;
+}

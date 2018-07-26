@@ -121,6 +121,15 @@
       <%= post.content %>
       <div class="post-time">
         <%= simple_time(post.updated_at) %>
+        <% if post.like %>
+          <%= link_to("/likes/#{post.id}/destroy", method: :post) do %>
+            <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{post.id}/create", method: :post) do %>
+            <span class="fa fa-heart like-btn" title="いいね！"></span>
+          <% end %>
+        <% end %>
       </div>
       <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
       <div class="post-menus">
