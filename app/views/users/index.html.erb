@@ -6,10 +6,19 @@
         <div class="user-left">
           <img src="<%= "/user_images/#{user.image_name}" %>">
         </div>
+        
         <div class="user-right">
+        <% if user.id == 1 || user.id == 3 %>
+          <%= link_to("/users/#{user.id}", class: "user-right1-3") do %>
+            <%= user.name %>
+          <% end %>
+        <% else %>
           <%= link_to(user.name, "/users/#{user.id}") %>
+        <% end %>
+          
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<a href="" color="blue">＜ページのTOPに戻る＞</a><br><br>

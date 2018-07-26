@@ -14,8 +14,12 @@
 　　<br>血液型　 ：Ｏ型 
 　　<br>特技　　 ：好き嫌いなく何でも食べれる
       </p>
-      <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+        <h6>
+    　<%= link_to("コメントの新規投稿", "/posts/new", class: "posts-form") %>
+      <% end %>
     </div>
     
     <div class="chara">
@@ -86,17 +90,59 @@
       </div>
       </div>
       </div>
-      <br>
-      <a href=""　color="blue">＜ページのTOPに戻る＞</a>
-    　<br><br>
     </div>
     
     <% else %>
       <div class="outers">
-      <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+        <% if @user.id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
+          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+          <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+          <h1></br>
+          <%= link_to("コメントの新規投稿", "/posts/new", class: "posts-form") %>
+        <% else %>
+          <%= link_to("", "/users/#{@user.id}/edit") %>
+          <%= link_to("", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
+          <h1></br>
+          <%= link_to("", "/posts/new") %>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
 
+<h1 class="posts-heading posts-h2"><%= @user.name %> さんの投稿一覧</h1>
+  <% if @user.posts.count == 0 %>
+    <div class="posts-index-item2">
+      まだ投稿はありません
+    </div>
+  <% end %>
+  <% @user.posts.each do |post| %>
+    <div class="posts-index-item">
+      <%= post.content %>
+      <div class="post-time">
+        <%= simple_time(post.updated_at) %>
+        <% if post.like %>
+          <%= link_to("/likes/#{post.id}/destroy", method: :post) do %>
+            <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{post.id}/create", method: :post) do %>
+            <span class="fa fa-heart like-btn" title="いいね！"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
+      <div class="post-menus">
+        <%= link_to("編集", "/posts/#{post.id}/edit") %><span>　 </span>  
+        <%= link_to("削除", "/posts/#{post.id}/destroy", method: :post, data: {confirm: "本当に削除しますか？"}) %>
+      </div>
+      <% end %>
+      <div class="post-right">
+        <div class="post-user-name">
+          <span class="post-left"><img src="<%= "/user_images/#{post.user.image_name}" %>"></span>
+          <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<br><a href="" color="blue">＜ページのTOPに戻る＞</a><br><br>
