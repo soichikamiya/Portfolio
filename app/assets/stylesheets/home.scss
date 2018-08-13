@@ -228,23 +228,34 @@ header {
   h1 {
     font-family: 'Hannotate TC','Segoe Print','MS UI Gothic','Papyrus',sans-serif;
     letter-spacing: 15px;
-    font-size: 65px;
+    font-size: 50px;
   }
   
   p {
     letter-spacing: 5px;
-    font-size: 30px;
+    font-size: 26px;
   }
   
   h2 {
     letter-spacing: 10px;
-    font-size: 43px;
-    padding: 35px 0 20px;
+    font-size: 37px;
+    padding: 35px 0 15px;
+  }
+  
+  .last {
+    margin-bottom: 30px;
   }
 
   .about-img {
+    margin-left: 100px;
     height: 500px;
     width: 500px;
+  }
+  
+  .theta {
+    display: inline-block;
+    margin: 0 0 30px 30px;
+    border-radius: 30px;
   }
   
   .foot {
