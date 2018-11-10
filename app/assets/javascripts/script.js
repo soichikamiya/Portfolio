@@ -3,10 +3,12 @@ document.addEventListener("turbolinks:load", function() {
   //TOPモーダル
   $('#push').click(function() {
     $('.secret').fadeIn(2500);
+    $('.top-main').fadeOut(2500);
   });
 
   $('#back').click(function() {
     $('.secret').fadeOut(2500);
+    $('.top-main').fadeIn(1500);
   });
   
   // FAQのアコーディオン
