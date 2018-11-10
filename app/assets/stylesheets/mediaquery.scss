@@ -17,51 +17,59 @@
   
 /* top page ================================ */
   .top-main {
-    height: 685px;
+    height: auto;
+    
     h1 {
-    letter-spacing: 8px;
-    font-size: 55px;
-   }
+      letter-spacing: 8px;
+      font-size: 55px;
+    }
+   
+    .whether {
+      margin-left: 10%;
+      margin-right: 10%;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
   }
 
   .foot {
 　　position: absolute;
     bottom: 0;
 
-  .fo-main {
-    font-size: 16px;
+    .fo-main {
+      font-size: 16px;
+    }
+    .fo-menus {
+      li {
+        margin-right: 12px;
+        font-size: 16px;
+      }
+    }
   }
-  .fo-menus {
-  li {
-    margin-right: 12px;
-    font-size: 16px;
-  }
-  }
-}
 
 /* about page ================================ */
-.about-main {
-  h1 {
-    letter-spacing: 12px;
-    font-size: 55px;
-  }
+  .about-main {
+    h1 {
+      letter-spacing: 12px;
+      font-size: 55px;
+    }
+    
+    p {
+      letter-spacing: 3px;
+      font-size: 23px;
+    }
+    
+    h2 {
+      letter-spacing: 10px;
+      font-size: 33px;
+      padding: 35px 0 20px;
+    }
   
-  p {
-    letter-spacing: 3px;
-    font-size: 23px;
+    .about-img {
+      height: 500px;
+      width: 500px;
+    }
   }
-  
-  h2 {
-    letter-spacing: 10px;
-    font-size: 33px;
-    padding: 35px 0 20px;
-  }
-
-  .about-img {
-    height: 500px;
-    width: 500px;
-  }
-}
 /* 終わり================================ */
 }
 
@@ -84,6 +92,8 @@
   }
 /* top page ================================ */
   .top-main {
+    height: 730px;
+    
     h1 {
      margin-top: 50px;
      letter-spacing: 5px;
@@ -105,54 +115,61 @@
     font-size: 18px;
     p {font-size: 22px;}
     }
+   
+    .whether {
+      margin-left: 5%;
+      margin-right: 5%;
+      font-size: 7px;
+      letter-spacing: 1px;
+    }
   }
 
   .foot {
     position: absolute;
     bottom: 0;
 
-  .fo-main {
-      display: none;
-  }
-  .fo-menus {
-  li {
-    font-size: 15px;
-    margin: 0px 0px 0px 12px;
-  }
-  }
+    .fo-main {
+        display: none;
+    }
+    .fo-menus {
+      li {
+        font-size: 15px;
+        margin: 0px 0px 0px 12px;
+      }
+    }
   }
   
   
 /* about page ================================ */
  .about-main {
-  h1 {
-    letter-spacing: 5px;
-    font-size: 50px;
-  }
+    h1 {
+      letter-spacing: 5px;
+      font-size: 50px;
+    }
+    
+    p {
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+    
+    h2 {
+      letter-spacing: 10px;
+      font-size: 27px;
+      padding: 35px 0 10px;
+    }
   
-  p {
-    letter-spacing: 1px;
-    font-size: 20px;
+    .about-img {
+      height: 380px;
+      width: 380px;
+      margin-bottom: 70px;
+    }
   }
-  
-  h2 {
-    letter-spacing: 10px;
-    font-size: 27px;
-    padding: 35px 0 10px;
-  }
-
-  .about-img {
-    height: 380px;
-    width: 380px;
-    margin-bottom: 70px;
-  }
- }
 }
 
 /* スマホ向けレイアウト */
 @media all and (max-width: 480px) {
   header {
-   height: 100px;
+    height: 100px;
    
     .header-logo a {
      margin-left: 0px;
@@ -162,27 +179,26 @@
   
     .header-menus a {
       padding: 45px 10px 42px 10px;
-      font-size: 14px;}
-      
-      .user-name{
-        display: none;
-      }
-     
+      font-size: 14px;
+    }
+    
+    .user-name{
+      display: none;
+    }
   }
   
-    .top-main {
+  .top-main {
     h1 {
       margin-top: 50px;
      letter-spacing: 2px;
      margin-bottom: 50px;
      font-size: 35px;
-     }
+    }
      
     p {
      letter-spacing: 1px;
      font-size: 20px;
-     } 
-    }
-
+    } 
+  }
 }
 

@@ -16,6 +16,17 @@
     <a href="https://twitter.com/" target="_blank"><img src="/twitter.jpg" class="btn twitter"></a>
     <a href="https://www.instagram.com/" target="_blank"><img src="/instagram.jpeg" class="btn insta"></a>
     
+    <p class="whether">
+    【大阪】 <%=@date.to_date.strftime("%m月%_d日")%> <%= @telop %> <img src="<%= @image %>" width="30px" height="20px"> ／
+    <%=@date_tmr.to_date.strftime("%m月%_d日")%> <%= @telop_tmr %> <img src="<%= @image_tmr %>" width="30px" height="20px">&emsp;
+    max:<%= @max_temp_tmr %>℃ min:<%= @min_temp_tmr %>℃ <br>
+    
+
+    【東京】 <%=@date_tokyo.to_date.strftime("%m月%_d日")%> <%= @telop_tokyo %> <img src="<%= @image_tokyo %>" width="30px" height="20px"> ／
+    <%=@date_tmr_tokyo.to_date.strftime("%m月%_d日")%> <%= @telop_tmr_tokyo %> <img src="<%= @image_tmr_tokyo %>" width="30px" height="20px">&emsp;
+    max:<%= @max_temp_tmr_tokyo %>℃ min:<%= @min_temp_tmr_tokyo %>℃
+    </p>
+    
  <div class="foot">
   <div class="fo-main">
    This Website made by Soichi Kamiya  

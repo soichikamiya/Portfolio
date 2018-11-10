@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
+  post "posts/create_post" => "posts#create_post"
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/destroy" => "posts#destroy"
   post "posts/:id/update" => "posts#update"
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
 
   get "/" => "home#top"
   get "about" => "home#about"
+  post "about_ajax" => "home#about_ajax"
   get "about/web" => "home#web"
   get "contact" => "home#contact"
 

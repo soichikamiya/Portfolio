@@ -1,0 +1,11 @@
+<span class="like">  
+  <% if post.like %>
+    <%= link_to("/likes/#{post.id}/destroy", method: :post, remote: true) do %>
+      <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+    <% end %>
+  <% else %>
+    <%= link_to("/likes/#{post.id}/create", method: :post, remote: true) do %>
+      <span class="fa fa-heart like-btn" title="いいね！"></span>
+    <% end %>
+  <% end %>
+</span>

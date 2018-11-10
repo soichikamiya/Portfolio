@@ -9,16 +9,40 @@ class PostsController < ApplicationController
   
   def new 
     @post = Post.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def create
+    @posts = Post.all.order(created_at: :desc)
     @post = Post.new(
       content: params[:content],
       user_id: @current_user.id
-      )
+    )
+    respond_to do |format|
+      if @post.save
+        format.html
+        format.js
+        #flash[:notice] = "新しい投稿が完了しました！" # ←Ajaxは現在ページなので、次ページで出る
+        #redirect_to("/posts/index")
+      else
+        format.js {render :new}
+        #render("/posts/new")
+      end
+    end
+  end
+  
+  def create_post
+    @posts = Post.all.order(created_at: :desc)
+    @post = Post.new(
+      content: params[:content],
+      user_id: @current_user.id
+    )
     if @post.save
-      flash[:notice] = "新しい投稿が完了しました！"
       redirect_to("/posts/index")
+      flash[:notice] = "新しい投稿が完了しました！"
     else
       render("/posts/new")
     end

@@ -1,4 +1,17 @@
 <div class="about-main">
+<!-- 
+    <%= @zipcode %>
+    <%= @address1 %>
+    <%= @address2 %>
+    <%= @address3 %>
+    <%= @query%><br>
+    
+    <h3>【 Ajaxを使ってみよう 】</h3>
+    <%= form_tag(url_for(:action => 'about_ajax'), :remote => true) do %>
+      <%= text_field_tag :title %>
+      <%= submit_tag "タイトルを変更する" %>
+    <% end %>
+-->
   <h1>My Self とは</h1>
   <p>あなた自身の紹介ページを作成することができます。
   <br>みんなとページを共有し合えるので、

@@ -30,7 +30,7 @@ gem 'bcrypt'
 gem 'pry-byebug'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'annotate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
