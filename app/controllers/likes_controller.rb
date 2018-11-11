@@ -10,12 +10,12 @@ class LikesController < ApplicationController
     respond_to do |format|
       if @like.save
         format.html
-        format.js {redirect_to("/posts/index")}
+        format.js
       else
-        format.js {render("/posts/index")}
+        format.js
+        #redirect_to("/posts/index")
       end
     end
-    #redirect_to("/posts/index")
   end
   
   def destroy
@@ -29,12 +29,11 @@ class LikesController < ApplicationController
     respond_to do |format|
       if @like.destroy
         format.html
-        format.js {redirect_to("/posts/index")}
+        format.js
       else
-        format.js {render("/posts/index")}
+        format.js
+        #redirect_to("/posts/index")
       end
     end
-    #redirect_to("/posts/index")
   end
-  
 end

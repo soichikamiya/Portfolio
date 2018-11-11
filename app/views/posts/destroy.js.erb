@@ -1,5 +1,5 @@
-$('#posts').html("<%= j (render 'index') %>");
-$('#post_success').html("新しい投稿が完了しました！").css({
+$('#post_<%= @post.id %>').fadeOut(700);
+$('#post_success').html("投稿が削除されました！").css({
   "padding": "8px 0",
   "background": "#3db354",
   "text-align": "center",
@@ -10,4 +10,3 @@ $('#post_success').html("新しい投稿が完了しました！").css({
   "color": "white",
   "font-size": "20px"
   });
-$('#post-form').fadeOut(1000);

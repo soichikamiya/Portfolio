@@ -25,8 +25,6 @@ class PostsController < ApplicationController
       if @post.save
         format.html
         format.js
-        #flash[:notice] = "新しい投稿が完了しました！" # ←Ajaxは現在ページなので、次ページで出る
-        #redirect_to("/posts/index")
       else
         format.js {render :new}
         #render("/posts/new")
@@ -50,23 +48,36 @@ class PostsController < ApplicationController
   
   def edit
     @post = Post.find_by(id: params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def destroy
     @post = Post.find_by(id: params[:id])
-    @post.destroy
-    flash[:notice] = "投稿が削除されました！"
-    redirect_to("/posts/index")
+    respond_to do |format|
+      if @post.destroy
+        format.html
+        format.js
+      else
+        format.js {render :index}
+        #redirect_to("/posts/index")
+      end
+    end
   end
   
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
-    if @post.save
-      flash[:notice] = "投稿が編集されました！"
-      redirect_to("/posts/index")
-    else
-      render("/posts/edit")
+    respond_to do |format|
+      if @post.save
+        format.html
+        format.js
+      else
+        format.js {render :new}
+        #render("/posts/edit")
+      end
     end
   end
   
@@ -78,5 +89,4 @@ class PostsController < ApplicationController
       redirect_to("/posts/index")
     end
   end
-  
 end

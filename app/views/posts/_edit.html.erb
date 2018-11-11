@@ -9,7 +9,7 @@
       </div>
     <% end %> 
       
-    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <%= form_tag "/posts/#{@post.id}/update", remote: true do %>
  
       <div class="form-body">
         <textarea name="content" placeholder="200文字以内で入力して下さい"><%= @post.content %></textarea>
