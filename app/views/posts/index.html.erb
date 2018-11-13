@@ -1,10 +1,47 @@
+<div class="overlay" id="overlay"></div>
 <div id="post_success"></div>
 <div class="main posts-index">
   <div class="container">
     <h1 class="posts-heading">投稿一覧</h1>
-    <%= link_to "データを追加する", "/posts/new", remote: true, class: "posts-form" %><br><br><br>
-    <div id="post-form">
-    </div>
+    <span class="posts-form js-btn-modal">投稿を追加する</span>
+    <%#= link_to "投稿を追加するajax", "/posts/new", remote: true, class: "posts-form" %>
     <div id="posts">
       <%= render :partial => "index" %>
     </div>
+
+    <!-- 新規投稿モーダル -->
+    <div class="main posts-new modal js-modal">
+      <button class="modal-close-btn js-close-btn"><i class="fa fa-times" title="閉じる"></i></button>
+      <div class="container">
+        <p class="posts-heading-modal">新規投稿する</p>
+        <div class="form pos-form">
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <%= form_tag "/posts/create", remote: true do %>
+            <div class="form-body">
+              <textarea name="content" placeholder="200文字以内で入力して下さい"></textarea>
+              <input type="submit" value="投稿">
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript">
+  $('.js-btn-modal').on('click', function(){
+    $('#overlay').fadeIn();
+    $('.js-modal').fadeIn();
+  });
+  
+  $('.js-close-btn').on('click', function(){
+    $('#overlay').fadeOut();
+    $('.js-modal').fadeOut();
+  });
+  $('#overlay').on('click', function(){
+    $('#overlay').fadeOut();
+    $('.js-modal').fadeOut();
+  });
+</script>

@@ -5,14 +5,11 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order(created_at: :desc)
+    @post = Post.new
   end
   
   def new 
     @post = Post.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
   
   def create

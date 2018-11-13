@@ -8,17 +8,17 @@ require 'json'
     #天気予報API
     uri_osaka = URI.parse("http://weather.livedoor.com/forecast/webservice/json/v1?city=270000")
     result_osaka = JSON.parse(Net::HTTP.get(uri_osaka))
-    @title = result_osaka["title"]
-    @dateLabel = result_osaka["forecasts"][0]["dateLabel"]
-    @date = result_osaka["forecasts"][0]["date"]
-    @telop = result_osaka["forecasts"][0]["telop"]
-    @image = result_osaka["forecasts"][0]["image"]["url"]
-    @datelabel_tmr = result_osaka["forecasts"][1]["dateLabel"]
-    @date_tmr = result_osaka["forecasts"][1]["date"]
-    @telop_tmr = result_osaka["forecasts"][1]["telop"]
-    @image_tmr = result_osaka["forecasts"][1]["image"]["url"]
-    @max_temp_tmr = result_osaka["forecasts"][1]["temperature"]["max"]["celsius"]
-    @min_temp_tmr = result_osaka["forecasts"][1]["temperature"]["min"]["celsius"]
+    @title_osaka = result_osaka["title"]
+    @dateLabel_osaka = result_osaka["forecasts"][0]["dateLabel"]
+    @date_osaka = result_osaka["forecasts"][0]["date"]
+    @telop_osaka = result_osaka["forecasts"][0]["telop"]
+    @image_osaka = result_osaka["forecasts"][0]["image"]["url"]
+    @datelabel_tmr_osaka = result_osaka["forecasts"][1]["dateLabel"]
+    @date_tmr_osaka = result_osaka["forecasts"][1]["date"]
+    @telop_tmr_osaka = result_osaka["forecasts"][1]["telop"]
+    @image_tmr_osaka = result_osaka["forecasts"][1]["image"]["url"]
+    @max_temp_tmr_osaka = result_osaka["forecasts"][1]["temperature"]["max"]["celsius"]
+    @min_temp_tmr_osaka = result_osaka["forecasts"][1]["temperature"]["min"]["celsius"]
     
     uri_tokyo = URI.parse('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
     result_tokyo = JSON.parse(Net::HTTP.get(uri_tokyo))
@@ -33,6 +33,20 @@ require 'json'
     @image_tmr_tokyo = result_tokyo["forecasts"][1]["image"]["url"]
     @max_temp_tmr_tokyo = result_tokyo["forecasts"][1]["temperature"]["max"]["celsius"]
     @min_temp_tmr_tokyo = result_tokyo["forecasts"][1]["temperature"]["min"]["celsius"]
+    
+    uri_fukuoka = URI.parse('http://weather.livedoor.com/forecast/webservice/json/v1?city=400010')
+    result_fukuoka = JSON.parse(Net::HTTP.get(uri_fukuoka))
+    @title_fukuoka = result_fukuoka["title"]
+    @dateLabel_fukuoka = result_fukuoka["forecasts"][0]["dateLabel"]
+    @date_fukuoka = result_fukuoka["forecasts"][0]["date"]
+    @telop_fukuoka = result_fukuoka["forecasts"][0]["telop"]
+    @image_fukuoka = result_fukuoka["forecasts"][0]["image"]["url"]
+    @datelabel_tmr_fukuoka = result_fukuoka["forecasts"][1]["dateLabel"]
+    @date_tmr_fukuoka = result_fukuoka["forecasts"][1]["date"]
+    @telop_tmr_fukuoka = result_fukuoka["forecasts"][1]["telop"]
+    @image_tmr_fukuoka = result_fukuoka["forecasts"][1]["image"]["url"]
+    @max_temp_tmr_fukuoka = result_fukuoka["forecasts"][1]["temperature"]["max"]["celsius"]
+    @min_temp_tmr_fukuoka = result_fukuoka["forecasts"][1]["temperature"]["min"]["celsius"]
   end
   
   def about

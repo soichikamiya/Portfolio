@@ -10,4 +10,5 @@ $('#post_success').html("投稿が編集されました！").css({
   "color": "white",
   "font-size": "20px"
   });
-$('#edit_form_<%= @post.id %>').fadeOut(700);
+$('#overlay').fadeOut(1000);
+$('#Modal<%= @post.id%> ').fadeOut(1000);

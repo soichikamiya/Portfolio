@@ -1,40 +1,61 @@
     <% @posts.each do |post| %>
-    <div id="post_<%= post.id %>">
-      <div class="posts-index-item">
-        <div id="content_<%= post.id %>">
-          <%= post.content %>
-        </div>
-        <div class="post-time">
-          <%= simple_time(post.updated_at) %>
-          <% if post.like %>
-            <%= link_to("/likes/#{post.id}/destroy", method: :post, remote: true) do %>
-              <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+      <div id="post_<%= post.id %>">
+        <div class="posts-index-item">
+          <div id="content_<%= post.id %>">
+            <%= post.content %>
+          </div>
+          <div class="post-time">
+            <%= simple_time(post.updated_at) %>
+            <% if post.like %>
+              <%= link_to("/likes/#{post.id}/destroy", method: :post, remote: true) do %>
+                <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+              <% end %>
+            <% else %>
+              <%= link_to("/likes/#{post.id}/create", method: :post, remote: true) do %>
+                <span class="fa fa-heart like-btn" title="いいね！"></span>
+              <% end %>
             <% end %>
-          <% else %>
-            <%= link_to("/likes/#{post.id}/create", method: :post, remote: true) do %>
-              <span class="fa fa-heart like-btn" title="いいね！"></span>
-            <% end %>
+          </div>
+          
+          <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
+          <div class="post-menus">
+            <%= link_to("編集", "/posts/#{post.id}/edit", remote: true) %><span>　 </span>  
+            <%= link_to("削除", "/posts/#{post.id}/destroy", data: {confirm: "本当に削除しますか？"}, method: :post, remote: true) %>
+          </div>
           <% end %>
-        </div>
-        
-        <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
-        <div class="post-menus">
-          <%= link_to("編集", "/posts/#{post.id}/edit", remote: true) %><span>　 </span>  
-          <%= link_to("削除", "/posts/#{post.id}/destroy", data: {confirm: "本当に削除しますか？"}, method: :post, remote: true) %>
-        </div>
-        <% end %>
-        
-        <div class="post-right">
-          <div class="post-user-name">
-            <span class="post-left">
-              <img src="<%= "/user_images/#{post.user.image_name}" %>">
-            </span>
-            <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+          
+          <div class="post-right">
+            <div class="post-user-name">
+              <span class="post-left">
+                <img src="<%= "/user_images/#{post.user.image_name}" %>">
+              </span>
+              <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="edit_form_<%= post.id %>"></div>
+      
+      <!-- 編集モーダル -->
+      <div class="modal posts-new" id="Modal<%=post.id%>">
+        <button class="modal-close-btn edit-close-btn"><i class="fa fa-times" title="閉じる"></i></button>
+        <div class="container">
+          <p class="posts-heading-modal">編集する</p>
+          <div class="form pos-form">
+            <% post.errors.full_messages.each do |message| %>
+              <div class="form-error">
+                <%= message %>
+              </div>
+            <% end %> 
+            <%= form_tag "/posts/#{post.id}/update", remote: true do %>
+              <div class="form-body">
+                <textarea name="content" placeholder="200文字以内で入力して下さい"><%= post.content %></textarea>
+                <input type="submit" value="保存">
+              </div>
+            <% end %>
+          </div>    
+        </div>
+      </div>
+    
     <% end %>
     <br><a href="" color="blue">＜ページのTOPに戻る＞</a><br><br>
   </div>

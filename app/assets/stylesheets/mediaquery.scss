@@ -80,9 +80,9 @@
    height: 100px;
    
     .header-logo a {
-     margin-left: 0px;
-     padding: 35px 5px 33px 5px;
-     font-size: 20px;
+      margin-left: 0px;
+      padding: 35px 5px 33px 5px;
+      font-size: 20px;
      }
   
     .header-menus a {
@@ -92,35 +92,32 @@
   }
 /* top page ================================ */
   .top-main {
-    height: 730px;
+    height: 670px;
     
     h1 {
-     margin-top: 50px;
-     letter-spacing: 5px;
-     margin-bottom: 50px;
-     font-size: 40px;
+      margin-top: 50px;
+      letter-spacing: 5px;
+      margin-bottom: 50px;
+      font-size: 40px;
      }
      
     p {
-     letter-spacing: 1px;
-     font-size: 25px;
+      letter-spacing: 1px;
+      font-size: 25px;
      } 
      
     .signup-btn {
-     font-size: 35px;
+      font-size: 35px;
     }
     
     .for-login {
-    margin: 50px 0 55px 0;
-    font-size: 18px;
+      margin: 50px 0 55px 0;
+      font-size: 18px;
     p {font-size: 22px;}
     }
    
     .whether {
-      margin-left: 5%;
-      margin-right: 5%;
-      font-size: 7px;
-      letter-spacing: 1px;
+      display: none;
     }
   }
 
@@ -172,9 +169,9 @@
     height: 100px;
    
     .header-logo a {
-     margin-left: 0px;
-     padding: 35px 5px 33px 5px;
-     font-size: 20px;
+      margin-left: 0px;
+      padding: 35px 5px 33px 5px;
+      font-size: 20px;
      }
   
     .header-menus a {
@@ -188,17 +185,23 @@
   }
   
   .top-main {
+    height: 670px;
+    
     h1 {
       margin-top: 50px;
-     letter-spacing: 2px;
-     margin-bottom: 50px;
-     font-size: 35px;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+      font-size: 35px;
     }
      
     p {
-     letter-spacing: 1px;
-     font-size: 20px;
-    } 
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+    
+    .whether {
+      display: none;
+    }
   }
 }
 

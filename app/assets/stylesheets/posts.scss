@@ -7,7 +7,15 @@
   font-weight: bold;
   font-size: 40px;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.posts-heading-modal {
+  font-family: 'HanziPen TC','Segoe Print','MS UI Gothic','Papyrus',sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 .posts-h2 {
@@ -129,9 +137,11 @@
 }
 
 .posts-form {
+  display: inline-block;
   color: black;
   font-size: 25px;
   padding: 20px 30px;
+  margin-bottom: 60px;
   border-radius: 25px;
   background-color: rgba(135, 206, 235, 0.6);
   cursor: pointer;
@@ -144,6 +154,38 @@
   position: relative;
   top: 5px;
   box-shadow: 0 2px 2px #161666;
+}
+
+/* posts/モーダル ================================ */
+.modal {
+  display: none;
+  padding: 40px;
+  padding-bottom: 10px;
+  position: fixed;
+  top: 210px;
+  left: 360px;
+  right: 360px;
+  border-radius: 10px;
+  background: #b8dee6;
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 20px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
 }
 
 /* likes/ ================================ */

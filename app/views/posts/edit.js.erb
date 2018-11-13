@@ -1,2 +1,12 @@
-$('#edit_form_<%= @post.id %>').html("<%= j (render 'edit') %>");
-$('#edit_form_<%= @post.id %>').fadeIn(1000);
+$('#overlay').fadeIn();
+$('#Modal<%= @post.id %>').fadeIn();
+
+$('.edit-close-btn').on('click', function(){
+  $('#overlay').fadeOut();
+  $('#Modal<%= @post.id %>').fadeOut();
+});
+
+$('#overlay').on('click', function(){
+  $('#overlay').fadeOut();
+  $('#Modal<%= @post.id %>').fadeOut();
+});
