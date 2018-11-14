@@ -1,12 +1,12 @@
-$('#overlay').fadeIn();
-$('#Modal<%= @post.id %>').fadeIn();
+$('#overlay').fadeIn(1000);
+$('#Modal<%= @post.id %>').fadeIn(700);
 
 $('.edit-close-btn').on('click', function(){
-  $('#overlay').fadeOut();
-  $('#Modal<%= @post.id %>').fadeOut();
+  $('#Modal<%= @post.id %>').fadeOut(700);
+  $('#overlay').fadeOut(1000);
 });
 
 $('#overlay').on('click', function(){
-  $('#overlay').fadeOut();
-  $('#Modal<%= @post.id %>').fadeOut();
+  $('#Modal<%= @post.id %>').fadeOut(700);
+  $('#overlay').fadeOut(1000);
 });

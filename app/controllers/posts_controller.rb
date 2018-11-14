@@ -23,13 +23,13 @@ class PostsController < ApplicationController
         format.html
         format.js
       else
-        format.js {render :new}
-        #render("/posts/new")
+        format.js {render :error}
       end
     end
   end
   
   def create_post
+    @user = User.find_by(id: @current_user.id)
     @posts = Post.all.order(created_at: :desc)
     @post = Post.new(
       content: params[:content],
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       redirect_to("/posts/index")
       flash[:notice] = "新しい投稿が完了しました！"
     else
-      render("/posts/new")
+      render("/users/show")
     end
   end
   
@@ -72,8 +72,7 @@ class PostsController < ApplicationController
         format.html
         format.js
       else
-        format.js {render :new}
-        #render("/posts/edit")
+        format.js {render :error}
       end
     end
   end

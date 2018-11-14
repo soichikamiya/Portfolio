@@ -15,14 +15,14 @@
       <div class="container">
         <p class="posts-heading-modal">新規投稿する</p>
         <div class="form pos-form">
-          <% @post.errors.full_messages.each do |message| %>
+          <%# @post.errors.full_messages.each do |message| %>
             <div class="form-error">
-              <%= message %>
+              <%#= message %>
             </div>
-          <% end %>
+          <%# end %>
           <%= form_tag "/posts/create", remote: true do %>
             <div class="form-body">
-              <textarea name="content" placeholder="200文字以内で入力して下さい"></textarea>
+              <textarea id="post-content" name="content" placeholder="200文字以内で入力して下さい"></textarea>
               <input type="submit" value="投稿">
             </div>
           <% end %>
@@ -32,16 +32,17 @@
 
 <script type="text/javascript">
   $('.js-btn-modal').on('click', function(){
-    $('#overlay').fadeIn();
-    $('.js-modal').fadeIn();
+    $('#overlay').fadeIn(1000);
+    $('.js-modal').fadeIn(1000);
   });
   
   $('.js-close-btn').on('click', function(){
-    $('#overlay').fadeOut();
-    $('.js-modal').fadeOut();
+    $('#overlay').fadeOut(1000);
+    $('.js-modal').fadeOut(700);
   });
+  
   $('#overlay').on('click', function(){
-    $('#overlay').fadeOut();
-    $('.js-modal').fadeOut();
+    $('#overlay').fadeOut(1000);
+    $('.js-modal').fadeOut(700);
   });
 </script>

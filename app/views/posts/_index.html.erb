@@ -41,11 +41,11 @@
         <div class="container">
           <p class="posts-heading-modal">編集する</p>
           <div class="form pos-form">
-            <% post.errors.full_messages.each do |message| %>
+            <%# post.errors.full_messages.each do |message| %>
               <div class="form-error">
-                <%= message %>
+                <%#= message %>
               </div>
-            <% end %> 
+            <%# end %> 
             <%= form_tag "/posts/#{post.id}/update", remote: true do %>
               <div class="form-body">
                 <textarea name="content" placeholder="200文字以内で入力して下さい"><%= post.content %></textarea>

@@ -1,0 +1,10 @@
+var content = "<%= @post.content %>",
+    contentCount = content.length;
+
+if (contentCount === 0) {
+    $('.form-error').html("投稿内容を入力してください");
+    $('.form-error-edit').html("投稿内容を入力してください");
+} else if (contentCount >= 200) {
+    $('.form-error').html("投稿内容は200文字以内で入力してください");
+    $('.form-error-edit').html("投稿内容は200文字以内で入力してください");
+}

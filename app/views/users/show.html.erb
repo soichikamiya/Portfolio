@@ -1,3 +1,5 @@
+<div class="overlay" id="overlay"></div>
+<div id="post_success"></div>
 <div class="user-show">
   <div class="container">
     <div class="user">
@@ -18,7 +20,7 @@
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
         <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
         <h6>
-    　<%= link_to("コメントの新規投稿", "/posts/new", class: "posts-form") %>
+    　<%= link_to("コメントの新規投稿", "javascript:void(0)", class: "posts-form") %>
       <% end %>
     </div>
     
@@ -102,7 +104,7 @@
           <%= link_to("編集", "/users/#{@user.id}/edit") %>
           <%= link_to("削除", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
           <h1></br>
-          <%= link_to("コメントの新規投稿", "/posts/new", class: "posts-form") %>
+          <%= link_to("コメントの新規投稿", "javascript:void(0)", class: "posts-form") %>
         <% else %>
           <%= link_to("", "/users/#{@user.id}/edit") %>
           <%= link_to("", "/users/#{@user.id}/destroy", method: :destroy, data: {confirm: "本当に削除しますか？"}) %>
@@ -121,32 +123,101 @@
     </div>
   <% end %>
   <% @user.posts.each do |post| %>
-    <div class="posts-index-item">
-      <%= post.content %>
-      <div class="post-time">
-        <%= simple_time(post.updated_at) %>
-        <% if post.like %>
-          <%= link_to("/likes/#{post.id}/destroy", method: :post) do %>
-            <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+    <div id="post_<%= post.id %>">
+      <div class="posts-index-item">
+        <div id="content_<%= post.id %>">
+          <%= post.content %>
+        </div>
+        <div class="post-time">
+          <%= simple_time(post.updated_at) %>
+          <% if post.like %>
+            <%= link_to("/likes/#{post.id}/destroy", method: :post, remote: true) do %>
+              <span class="fa fa-heart like-btn-unlike" title="いいね 取り消し"></span>
+            <% end %>
+          <% else %>
+            <%= link_to("/likes/#{post.id}/create", method: :post, remote: true) do %>
+              <span class="fa fa-heart like-btn" title="いいね！"></span>
+            <% end %>
           <% end %>
-        <% else %>
-          <%= link_to("/likes/#{post.id}/create", method: :post) do %>
-            <span class="fa fa-heart like-btn" title="いいね！"></span>
-          <% end %>
+        </div>
+        <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
+        <div class="post-menus">
+          <%= link_to("編集", "/posts/#{post.id}/edit", remote: true) %><span>　 </span>  
+          <%= link_to("削除", "/posts/#{post.id}/destroy", data: {confirm: "本当に削除しますか？"}, method: :post, remote: true) %>
+        </div>
         <% end %>
+        <div class="post-right">
+          <div class="post-user-name">
+            <span class="post-left"><img src="<%= "/user_images/#{post.user.image_name}" %>"></span>
+            <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+          </div>
+        </div>
       </div>
-      <% if post.user_id == @current_user.id || @current_user.id == 1 || @current_user.id == 3 %>
-      <div class="post-menus">
-        <%= link_to("編集", "/posts/#{post.id}/edit") %><span>　 </span>  
-        <%= link_to("削除", "/posts/#{post.id}/destroy", method: :post, data: {confirm: "本当に削除しますか？"}) %>
-      </div>
-      <% end %>
-      <div class="post-right">
-        <div class="post-user-name">
-          <span class="post-left"><img src="<%= "/user_images/#{post.user.image_name}" %>"></span>
-          <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+      
+      <!-- 編集モーダル -->
+      <div class="modal posts-new" id="Modal<%=post.id%>">
+        <button class="modal-close-btn edit-close-btn"><i class="fa fa-times" title="閉じる"></i></button>
+        <div class="container">
+          <p class="posts-heading-modal">編集する</p>
+          <div class="form pos-form">
+            <%# post.errors.full_messages.each do |message| %>
+              <div class="form-error-edit" style="color:red;">
+                <%#= message %>
+              </div>
+            <%# end %> 
+            <%= form_tag "/posts/#{post.id}/update", remote: true do %>
+              <div class="form-body">
+                <textarea name="content" placeholder="200文字以内で入力して下さい"><%= post.content %></textarea>
+                <input type="submit" value="保存">
+              </div>
+            <% end %>
+          </div>    
         </div>
       </div>
     </div>
+    
   <% end %>
 <br><a href="" color="blue">＜ページのTOPに戻る＞</a><br><br>
+
+<!-- 新規投稿モーダル -->
+<div class="main posts-new modal js-modal">
+  <button class="modal-close-btn js-close-btn"><i class="fa fa-times" title="閉じる"></i></button>
+  <div class="container">
+    <p class="posts-heading-modal">新規投稿する</p>
+    <div class="form pos-form">
+      <% @post.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <%= form_tag "/posts/create_post" do %>
+        <div class="form-body">
+          <textarea name="content" placeholder="200文字以内で入力して下さい"><%= @post.content %></textarea>
+          <input type="submit" value="投稿">
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.posts-form').on('click', function(){
+    $('#overlay').fadeIn(1000);
+    $('.js-modal').fadeIn(1000);
+  });
+  
+  if ($('.form-error').length) {
+    $('#overlay').fadeIn(100);
+    $('.js-modal').fadeIn(1000);
+  };
+  
+  $('.js-close-btn').on('click', function(){
+    $('#overlay').fadeOut(1000);
+    $('.js-modal').fadeOut(700);
+  });
+  
+  $('#overlay').on('click', function(){
+    $('#overlay').fadeOut(1000);
+    $('.js-modal').fadeOut(700);
+  });
+</script>
